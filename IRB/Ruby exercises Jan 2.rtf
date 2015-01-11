@@ -1,0 +1,731 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red64\green11\blue217;\red180\green36\blue25;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf0 \CocoaLigature0 Last login: Fri Jan  2 10:54:15 on ttys001\
+Tims-MacBook-Pro:~ timwilliams$ irb\
+irb(main):001:0> "world wide web".split\
+=> ["world", "wide", "web"]\
+irb(main):002:0> b = String.new("blue")\
+=> "blue"\
+irb(main):003:0> String.try_convert("red")\
+=> "red"\
+irb(main):004:0> "cat".between?("ant", "zebra")\
+=> true\
+irb(main):005:0> end\
+SyntaxError: (irb):5: syntax error, unexpected keyword_end\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):006:0> exit\
+Tims-MacBook-Pro:~ timwilliams$ cd Desktop\
+Tims-MacBook-Pro:Desktop timwilliams$ mkdir new_dir\
+Tims-MacBook-Pro:Desktop timwilliams$ cd new_dir\
+Tims-MacBook-Pro:new_dir timwilliams$ touch new_file.rb\
+Tims-MacBook-Pro:new_dir timwilliams$ rm new_file.rb\
+Tims-MacBook-Pro:new_dir timwilliams$ cd ..\
+Tims-MacBook-Pro:Desktop timwilliams$ rmdir new_dir\
+rmdir: new_dir: Directory not empty\
+Tims-MacBook-Pro:Desktop timwilliams$ rmdir new_dir\
+rmdir: new_dir: Directory not empty\
+Tims-MacBook-Pro:Desktop timwilliams$ rmdir new_dir\
+rmdir: new_dir: Directory not empty\
+Tims-MacBook-Pro:Desktop timwilliams$ cd new_dir\
+Tims-MacBook-Pro:new_dir timwilliams$ touch new_file.rb\
+Tims-MacBook-Pro:new_dir timwilliams$ cd ..\
+Tims-MacBook-Pro:Desktop timwilliams$ rm -R new new_dir\
+rm: new: No such file or directory\
+Tims-MacBook-Pro:Desktop timwilliams$ irb\
+irb(main):001:0> puts 'hello world!'\
+hello world!\
+=> nil\
+irb(main):002:0> exit\
+Tims-MacBook-Pro:Desktop timwilliams$ touch new_file.rb\
+Tims-MacBook-Pro:Desktop timwilliams$ ruby new_file.rb\
+hello world\
+Tims-MacBook-Pro:Desktop timwilliams$ gem install pry\
+Fetching: method_source-0.8.2.gem (100%)\
+Successfully installed method_source-0.8.2\
+Fetching: slop-3.6.0.gem (100%)\
+Successfully installed slop-3.6.0\
+Fetching: coderay-1.1.0.gem (100%)\
+Successfully installed coderay-1.1.0\
+Fetching: pry-0.10.1.gem (100%)\
+Successfully installed pry-0.10.1\
+Parsing documentation for method_source-0.8.2\
+Installing ri documentation for method_source-0.8.2\
+Parsing documentation for slop-3.6.0\
+Installing ri documentation for slop-3.6.0\
+invalid options: -SNw2\
+(invalid options are ignored)\
+Parsing documentation for coderay-1.1.0\
+Installing ri documentation for coderay-1.1.0\
+Parsing documentation for pry-0.10.1\
+Installing ri documentation for pry-0.10.1\
+Done installing documentation for method_source, slop, coderay, pry after 5 seconds\
+4 gems installed\
+Tims-MacBook-Pro:Desktop timwilliams$ pry\
+[1] pry(main)> exit\
+Tims-MacBook-Pro:Desktop timwilliams$ ruby new_file.rb\
+\
+
+\f1\b From:
+\f0\b0  /Users/timwilliams/Desktop/new_file.rb @ line 6 :\
+\
+    
+\f1\b \cf2 1
+\f0\b0 \cf0 : 
+\f1\b \cf2 # new_file.rb
+\f0\b0 \cf0 \
+    
+\f1\b \cf2 2
+\f0\b0 \cf0 : require 
+\f1\b \cf3 "
+\f0\b0 pry
+\f1\b "
+\f0\b0 \cf0 \
+    
+\f1\b \cf2 3
+\f0\b0 \cf0 : \
+    
+\f1\b \cf2 4
+\f0\b0 \cf0 : a = [
+\f1\b \cf2 1
+\f0\b0 \cf0 , 
+\f1\b \cf2 2
+\f0\b0 \cf0 , 
+\f1\b \cf2 3
+\f0\b0 \cf0 ]\
+    
+\f1\b \cf2 5
+\f0\b0 \cf0 : a << 
+\f1\b \cf2 4
+\f0\b0 \cf0 \
+ => 
+\f1\b \cf2 6
+\f0\b0 \cf0 : binding.pry     
+\f1\b \cf2 # execution will pause here, allowing you to inspect all objects
+\f0\b0 \cf0 \
+    
+\f1\b \cf2 7
+\f0\b0 \cf0 : puts a\
+\
+[1] pry(main)> \
+1\
+2\
+3\
+4\
+Tims-MacBook-Pro:Desktop timwilliams$ mkdir my_folder\
+Tims-MacBook-Pro:Desktop timwilliams$ cd my_folder\
+Tims-MacBook-Pro:my_folder timwilliams$ touch one.rb\
+Tims-MacBook-Pro:my_folder timwilliams$ touch two.rb\
+Tims-MacBook-Pro:my_folder timwilliams$ ruby one.rb\
+the is file one\
+Tims-MacBook-Pro:my_folder timwilliams$ ruby two.rb\
+this is file two\
+Tims-MacBook-Pro:my_folder timwilliams$ cd ..\
+Tims-MacBook-Pro:Desktop timwilliams$ rm -R new my_folder\
+rm: new: No such file or directory\
+Tims-MacBook-Pro:Desktop timwilliams$ irb \
+irb(main):001:0> a = 'ten'\
+=> "ten"\
+irb(main):002:0> "my favorite number is #\{a\}!"\
+=> "my favorite number is ten!"\
+irb(main):003:0> 1 + 1\
+=> 2\
+irb(main):004:0> 1+1\
+=> 2\
+irb(main):005:0> 1 - 1\
+=> 0\
+irb(main):006:0> 4*4\
+=> 16\
+irb(main):007:0> 16/4\
+=> 4\
+irb(main):008:0> 16%5\
+=> 1\
+irb(main):009:0> 15%5\
+=> 0\
+irb(main):010:0> 15/4\
+=> 3\
+irb(main):011:0> 15./4\
+=> 3\
+irb(main):012:0> 15.0/4\
+=> 3.75\
+irb(main):013:0> 15.00/4\
+=> 3.75\
+irb(main):014:0> 9.75*4.32\
+=> 42.120000000000005\
+irb(main):015:0> 4 == 4\
+=> true\
+irb(main):016:0> 5 == 5\
+=> true\
+irb(main):017:0> 5 == 4\
+=> false\
+irb(main):018:0> 'foo' == 'foo'\
+=> true\
+irb(main):019:0> 'foo' == 'bar'\
+=> false\
+irb(main):020:0> '4' == 4\
+=> false\
+irb(main):021:0> 'foo' + 'foo'\
+=> "foofoo"\
+irb(main):022:0> 'foo' + 'bar'\
+=> "foobar"\
+irb(main):023:0> '1' + '1'\
+=> "11"\
+irb(main):024:0> 'one' + 1\
+TypeError: no implicit conversion of Fixnum into String\
+	from (irb):24:in `+'\
+	from (irb):24\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):025:0> '12' .to_i\
+=> 12\
+irb(main):026:0> '4.' to_i\
+SyntaxError: (irb):26: syntax error, unexpected tIDENTIFIER, expecting end-of-input\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):027:0> '4' .to_i\
+=> 4\
+irb(main):028:0> '4 hi there' .to_i\
+=> 4\
+irb(main):029:0> 'hi there 4' .to_i\
+=> 0\
+irb(main):030:0> '4' .to_i\
+=> 4\
+irb(main):031:0> '4' .to_f\
+=> 4.0\
+irb(main):032:0> '4 hi there' .to_f\
+=> 4.0\
+irb(main):033:0> 'hi there 4' .to_f\
+=> 0.0\
+irb(main):034:0> 4 .to_s\
+=> "4"\
+irb(main):035:0> 234234 to .to_s\
+SyntaxError: (irb):35: syntax error, unexpected tIDENTIFIER, expecting end-of-input\
+234234 to .to_s\
+         ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):036:0> 23423 .to_s\
+=> "23423"\
+irb(main):037:0> [1,2,3,4,5]\
+=> [1, 2, 3, 4, 5]\
+irb(main):038:0> [1, 2, 3, 4, 5][2]\
+=> 3\
+irb(main):039:0> 001 \{:dog => 'barks\}\
+irb(main):040:1' \
+irb(main):041:1' \
+irb(main):042:1' '\}\
+SyntaxError: (irb):39: syntax error, unexpected '\{', expecting end-of-input\
+001 \{:dog => 'barks\}\
+     ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):043:0> \{:dog => 'barks'\}\
+=> \{:dog=>"barks"\}\
+irb(main):044:0> \{;dog => 'barks', :cat => 'meows', :pig => 'oinks'\}\
+SyntaxError: (irb):44: syntax error, unexpected ';', expecting '\}'\
+\{;dog => 'barks', :cat => 'meows', :pig => 'oinks'\}\
+  ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):045:0> \{:dog => 'barks', :cat => 'meows', :pig => 'oinks'\}\
+=> \{:dog=>"barks", :cat=>"meows", :pig=>"oinks"\}\
+irb(main):046:0> \{:dog => 'barks', :cat => 'meows', :pig => 'oinks'\}[:pig]\
+=> "oinks"\
+irb(main):047:0> a = puts "stuff"\
+stuff\
+=> nil\
+irb(main):048:0> puts a\
+\
+=> nil\
+irb(main):049:0> \
+irb(main):050:0* \
+irb(main):051:0* \
+irb(main):052:0* \
+irb(main):053:0* \
+irb(main):054:0* \
+irb(main):055:0* \
+irb(main):056:0* 'Joseph' + ' Williams'\
+=> "Joseph Williams"\
+irb(main):057:0> "Joseph" + " Williams"\
+=> "Joseph Williams"\
+irb(main):058:0> 1234%1230\
+=> 4\
+irb(main):059:0> 1234/1000\
+=> 1\
+irb(main):060:0> 1234%1200\
+=> 34\
+irb(main):061:0> 1234%1000\
+=> 234\
+irb(main):062:0> 1234/1\
+=> 1234\
+irb(main):063:0> 1234 % 1000\
+=> 234\
+irb(main):064:0> 234/10\
+=> 23\
+irb(main):065:0> 1234%1000/100\
+=> 2\
+irb(main):066:0> 1234%1000/10\
+=> 23\
+irb(main):067:0> 1234%1000%100%10\
+=> 4\
+irb(main):068:0> \{:movie1 => 1975,:movie2 => 2004,: movie3 => 2013, :movie4 => 2001, : movie5 => 1981\}[:movie1][:movie2][:movie3][:movie4][:movie5]\
+SyntaxError: (irb):68: syntax error, unexpected ':', expecting '\}'\
+...ovie1 => 1975,:movie2 => 2004,: movie3 => 2013, :movie4 => 2...\
+...                               ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):069:0> \{:movie1 => 1975,:movie2 => 2004,: movie3 => 2013, :movie4 => 2001, : movie5 => 1981\}\
+SyntaxError: (irb):69: syntax error, unexpected ':', expecting '\}'\
+...ovie1 => 1975,:movie2 => 2004,: movie3 => 2013, :movie4 => 2...\
+...                               ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):070:0> \{:movie1 => 1945\}\
+=> \{:movie1=>1945\}\
+irb(main):071:0> \{:movie1=>1945\}[:movie1]\
+=> 1945\
+irb(main):072:0> \{:movie1=>1945, :movie2=>2004\}\
+=> \{:movie1=>1945, :movie2=>2004\}\
+irb(main):073:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}\
+=> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}\
+irb(main):074:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie1][:movie2]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):74:in `[]'\
+	from (irb):74\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):075:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie1,:movie2]\
+ArgumentError: wrong number of arguments (2 for 1)\
+	from (irb):75:in `[]'\
+	from (irb):75\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):076:0> [:movie1]\
+=> [:movie1]\
+irb(main):077:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie1]\
+=> 1945\
+irb(main):078:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie5]\
+=> 1981\
+irb(main):079:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie2]\
+=> 2004\
+irb(main):080:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie3]\
+=> 2013\
+irb(main):081:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie4]\
+=> 2001\
+irb(main):082:0> puts [:movie4]\
+movie4\
+=> nil\
+irb(main):083:0> a = [:movie4]\
+=> [:movie4]\
+irb(main):084:0> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}\
+=> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}\
+irb(main):085:0> puts :movie1\
+movie1\
+=> nil\
+irb(main):086:0> puts \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}[:movie1]\
+SyntaxError: (irb):86: syntax error, unexpected =>, expecting '\}'\
+puts \{:movie1=>1945, :movie2=>2004, :movie3=...\
+               ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):087:0> movies = \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}\
+=> \{:movie1=>1945, :movie2=>2004, :movie3=>2013, :movie4=>2001, :movie5=>1981\}\
+irb(main):088:0> puts movies[:movie1]\
+1945\
+=> nil\
+irb(main):089:0> puts movies[:movie2]\
+2004\
+=> nil\
+irb(main):090:0> puts movies[:movie3]\
+2013\
+=> nil\
+irb(main):091:0> puts movies[:movies4]\
+\
+=> nil\
+irb(main):092:0> puts movie[:movie4]\
+NameError: undefined local variable or method `movie' for main:Object\
+	from (irb):92\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):093:0> puts movies[:movie4]\
+2001\
+=> nil\
+irb(main):094:0> puts movies[:movie5]\
+1981\
+=> nil\
+irb(main):095:0> array = [1975][2004][2013][2001][1981]\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from (irb):95\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):096:0> array = [1975,2004,2014,2013,2001,1981]\
+=> [1975, 2004, 2014, 2013, 2001, 1981]\
+irb(main):097:0> puts array[0]\
+1975\
+=> nil\
+irb(main):098:0> puts array[1]\
+2004\
+=> nil\
+irb(main):099:0> puts array[2]\
+2014\
+=> nil\
+irb(main):100:0> puts array[3]\
+2013\
+=> nil\
+irb(main):101:0> puts array[4]\
+2001\
+=> nil\
+irb(main):102:0> puts array[5]\
+1981\
+=> nil\
+irb(main):103:0> puts array[6]\
+\
+=> nil\
+irb(main):104:0> 5%3\
+=> 2\
+irb(main):105:0> 5/3\
+=> 1\
+irb(main):106:0> 5%5\
+=> 0\
+irb(main):107:0> 5%4\
+=> 1\
+irb(main):108:0> 5%3\
+=> 2\
+irb(main):109:0> 5%2\
+=> 1\
+irb(main):110:0> puts 5*4*3*2\
+120\
+=> nil\
+irb(main):111:0> puts 6*5*4*3*2\
+720\
+=> nil\
+irb(main):112:0> puts 7*6*5*4*3*2\
+5040\
+=> nil\
+irb(main):113:0> puts 8*7*6*5*4*3*2\
+40320\
+=> nil\
+irb(main):114:0> puts 3.00*3.00*3.00\
+27.0\
+=> nil\
+irb(main):115:0> puts 4.00*4.00*4.00\
+64.0\
+=> nil\
+irb(main):116:0> put 5.00*5.00*5.00\
+NoMethodError: undefined method `put' for main:Object\
+	from (irb):116\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):117:0> puts 5.00*5.00*5.00\
+125.0\
+=> nil\
+irb(main):118:0> puts 3.00*3.00\
+9.0\
+=> nil\
+irb(main):119:0> puts 4.00*4.00\
+16.0\
+=> nil\
+irb(main):120:0> puts 5.00*5.00\
+25.0\
+=> nil\
+irb(main):121:0> #The interpreter was expecting a bracket instead of a parenthesis\
+irb(main):122:0* \
+\
+\
+Last login: Fri Jan  2 14:49:31 on ttys000\
+Tims-MBP:~ timwilliams$ irf\
+-bash: irf: command not found\
+Tims-MBP:~ timwilliams$ irb\
+irb(main):001:0> firt_name = 'Joe'\
+=> "Joe"\
+irb(main):002:0> name = gets\
+Bob\
+=> "Bob\\n"\
+irb(main):003:0> name = gets.chomp\
+Bob\
+=> "Bob"\
+irb(main):004:0> name + ' is super great!"\
+irb(main):005:0' '\
+=> "Bob is super great!\\"\\n"\
+irb(main):006:0> firt_name = 'Joe'\
+=> "Joe"\
+irb(main):007:0> first_name\
+NameError: undefined local variable or method `first_name' for main:Object\
+	from (irb):7\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):008:0> first_name = 'Joe'\
+=> "Joe"\
+irb(main):009:0> first_name\
+=> "Joe"\
+irb(main):010:0> a = 4\
+=> 4\
+irb(main):011:0> b = a\
+=> 4\
+irb(main):012:0> a = 7\
+=> 7\
+irb(main):013:0> \
+irb(main):014:0* \
+irb(main):015:0* name = gets \
+Bob\
+=> "Bob\\n"\
+irb(main):016:0> \
+irb(main):017:0* \
+irb(main):018:0* name = gets.chomp\
+Bob\
+=> "Bob"\
+irb(main):019:0> name + ' is super great!'\
+=> "Bob is super great!"\
+irb(main):020:0> exit\
+Tims-MBP:~ timwilliams$ cd Desktop\
+Tims-MBP:Desktop timwilliams$ touch scope.rb\
+Tims-MBP:Desktop timwilliams$ ruby scope.rb\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> ruby scope.rb\
+NameError: undefined local variable or method `scope' for main:Object\
+	from (irb):1\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):002:0> exit\
+Tims-MBP:Desktop timwilliams$ ruby scope.rb\
+Tims-MBP:Desktop timwilliams$ ruby scope.rb\
+3\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> ruby scope.rb\
+NameError: undefined local variable or method `scope' for main:Object\
+	from (irb):1\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):002:0> exit\
+Tims-MBP:Desktop timwilliams$ ruby scope.rb\
+3\
+scope.rb:15:in `<main>': undefined local variable or method `b' for main:Object (NameError)\
+Tims-MBP:Desktop timwilliams$ ruby scope.rb\
+5\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> MY_CONSTANT = 'I am available throughout your app'\
+=> "I am available throughout your app"\
+irb(main):002:0> $var = 'I am also available throughout your app'\
+=> "I am also available throughout your app"\
+irb(main):003:0> @@instances = 0\
+(irb):3: warning: class variable access from toplevel\
+=> 0\
+irb(main):004:0> @var = 'I am available throughout the current instance of this class.'\
+=> "I am available throughout the current instance of this class."\
+irb(main):005:0> var = 'I must be passed around to cross scope boundries.'\
+=> "I must be passed around to cross scope boundries."\
+irb(main):006:0> \
+irb(main):007:0* \
+irb(main):008:0* \
+irb(main):009:0* \
+irb(main):010:0* \
+irb(main):011:0* \
+irb(main):012:0* exit\
+Tims-MBP:Desktop timwilliams$ cd Desktop\
+-bash: cd: Desktop: No such file or directory\
+Tims-MBP:Desktop timwilliams$ touch name.rb\
+Tims-MBP:Desktop timwilliams$ ruby name.rb\
+What is your name?\
+Tim\
+Hello Tim\
+Tims-MBP:Desktop timwilliams$ mkdir ruby_exercises\
+Tims-MBP:Desktop timwilliams$ touch age.rb\
+Tims-MBP:Desktop timwilliams$ ruby age.rb\
+How old are you?\
+25\
+In 10 years you will be:\
+age.rb:8:in `+': no implicit conversion of Fixnum into String (TypeError)\
+	from age.rb:8:in `<main>'\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> age = gets.chomp\
+12\
+=> "12"\
+irb(main):002:0> age.to_i\
+=> 12\
+irb(main):003:0> age+1\
+TypeError: no implicit conversion of Fixnum into String\
+	from (irb):3:in `+'\
+	from (irb):3\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):004:0> age2 = age.to_i\
+=> 12\
+irb(main):005:0> age2+1\
+=> 13\
+irb(main):006:0> exit\
+Tims-MBP:Desktop timwilliams$ ruby age.rb\
+How old are you?\
+25\
+In 10 years you will be:\
+35\
+In 20 years you will be:\
+45\
+In 30 years you will be:\
+55\
+In 40 years you will be:\
+65\
+Tims-MBP:Desktop timwilliams$ ruby name.rb\
+What is your name?\
+Tim\
+Hello Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tims-MBP:Desktop timwilliams$ ruby name.rb\
+name.rb:16: syntax error, unexpected tIDENTIFIER, expecting end-of-input\
+puts 'Your full name is ' answer + ' ' + answer2\
+                                ^\
+Tims-MBP:Desktop timwilliams$ ruby name.rb\
+What is your first name?\
+Tim\
+What is your last name\
+Williams\
+Hello Tim Williams\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tim\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> x = 0\
+=> 0\
+irb(main):002:0> #Variable Question 5.1\
+irb(main):003:0* # Output is 3, no errors\
+irb(main):004:0* #Variable Question 5.2\
+irb(main):005:0* Output is 3, error because x is out of scope\
+SyntaxError: (irb):5: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '\{' or '('\
+Output is 3, error because x is out of scope\
+                          ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):006:0> \
+irb(main):007:0* \
+irb(main):008:0* #Variable Question 6 answer: the local variable 'shoes' is not defined in the main scope\
+irb(main):009:0* exit\
+Tims-MBP:Desktop timwilliams$ touch mutate.rb\
+Tims-MBP:Desktop timwilliams$ ruby mutate.rb\
+"Before mutate method: [1, 2, 3]"\
+"After mutate method: [1, 2]"\
+Tims-MBP:Desktop timwilliams$ touch return.rb\
+Tims-MBP:Desktop timwilliams$ ruby return.rb\
+7\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> "hi there."length.to_s\
+SyntaxError: (irb):1: syntax error, unexpected tIDENTIFIER, expecting end-of-input\
+"hi there."length.to_s\
+                 ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):002:0> "hi there.".length.to_s\
+=> "9"\
+irb(main):003:0> "hi there".length\
+=> 8\
+irb(main):004:0> exit\
+Tims-MBP:Desktop timwilliams$ touch methods_exercise_1\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_1\
+ruby: No such file or directory -- methods_exercise_1 (LoadError)\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_1.rb\
+What is your name?\
+"What is your name?"\
+Tim\
+Hello Tim\
+Tims-MBP:Desktop timwilliams$ touch methods_exercise_2.RTF\
+Tims-MBP:Desktop timwilliams$ touch methods_exercise_2.rtf\
+Tims-MBP:Desktop timwilliams$ touch methods_exercise_3.rb\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_3.rb\
+methods_exercise_3.rb:18:in `<main>': undefined local variable or method `numer_one' for main:Object (NameError)\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_3.rb\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_3.rb\
+100\
+Tims-MBP:Desktop timwilliams$ touch methods_exercise_4.rg\
+Tims-MBP:Desktop timwilliams$ touch methods_exercise_4.rb\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_4.rb\
+\
+Tims-MBP:Desktop timwilliams$ ruby methods_exercise_4.rb\
+Yippeee!!!!\
+Yippeee!!!!\
+\
+Tims-MBP:Desktop timwilliams$ touch conditional.rb\
+Tims-MBP:Desktop timwilliams$ ruby conditional.rb\
+Put in a number\
+3\
+a is 3\
+Tims-MBP:Desktop timwilliams$ ruby conditional.rb\
+Put in a number\
+4\
+a is 4\
+Tims-MBP:Desktop timwilliams$ ruby conditional.rb\
+Put in a number\
+5\
+Tims-MBP:Desktop timwilliams$ ruby conditional.rb\
+Put in a number\
+5\
+a is neither 3, nor 4\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> 4 <5\
+=> true\
+irb(main):002:0> 4 > 5\
+=> false\
+irb(main):003:0> true? 3>5 : "Wrong idiot"\
+SyntaxError: (irb):3: syntax error, unexpected ':', expecting end-of-input\
+true? 3>5 : "Wrong idiot"\
+           ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):004:0> (3>5)? "good job!" : "wrong, idiot"\
+=> "wrong, idiot"\
+irb(main):005:0> exit\
+Tims-MBP:Desktop timwilliams$ touch case_statement.rb\
+Tims-MBP:Desktop timwilliams$ ruby case_statement.rb\
+Tims-MBP:Desktop timwilliams$ ruby case_statement.rb\
+a is 5\
+Tims-MBP:Desktop timwilliams$ ruby case_statement.rb\
+a is 5\
+Tims-MBP:Desktop timwilliams$ touch conditional2.rb\
+Tims-MBP:Desktop timwilliams$ ruby conditional2.rb\
+how can this be true\
+Tims-MBP:Desktop timwilliams$ ruby conditional2.rb\
+how can this be true\
+Tims-MBP:Desktop timwilliams$ irb\
+irb(main):001:0> (32 * 4) >= 129\
+=> false\
+irb(main):002:0> false != !true\
+=> false\
+irb(main):003:0> true == 4\
+=> false\
+irb(main):004:0> false == (847 == '874')\
+=> true\
+irb(main):005:0> (!true || (!(100/5) == 20) || ((328/4) == 82 )) || false\
+=> true\
+irb(main):006:0> exit\
+Tims-MBP:Desktop timwilliams$ touch control_flow_exercise.rb\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise.rb\
+control_flow_exercise.rb:23:in `<main>': undefined method `stringer' for main:Object (NoMethodError)\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise.rb\
+fail\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise.rb\
+SUPERMAN IS BACK\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise 3.rb\
+ruby: No such file or directory -- control_flow_exercise (LoadError)\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise 3.rb\
+ruby: No such file or directory -- control_flow_exercise (LoadError)\
+Tims-MBP:Desktop timwilliams$ ruby ruby control_flow_exercise3.rb\
+ruby: No such file or directory -- ruby (LoadError)\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise3.rb\
+type a number\
+50\
+the number is between 50 and 100\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise4.rb\
+control_flow_exercise4.rb:39: syntax error, unexpected keyword_else, expecting keyword_end\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise4.rb\
+FALSE\
+Did you get it right\
+Alright now!\
+Tims-MBP:Desktop timwilliams$ ruby control_flow_exercise5.rb\
+control_flow_exercise5.rb:14: syntax error, unexpected keyword_when\
+when int_var >= 0 && int_var < 50 \
+    ^\
+control_flow_exercise5.rb:19: syntax error, unexpected keyword_def, expecting keyword_when\
+def case2()\
+   ^\
+control_flow_exercise5.rb:20: syntax error, unexpected keyword_when\
+when int_var >= 50 && int_var <= 100\
+    ^\
+control_flow_exercise5.rb:26: syntax error, unexpected keyword_else, expecting end-of-input\
+Tims-MBP:Desktop timwilliams$ \
+}

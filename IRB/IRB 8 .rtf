@@ -1,0 +1,928 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red153\green153\blue153;\red230\green229\blue229;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs22 \cf0 \CocoaLigature0 Last login: Wed Jan  7 21:30:02 on ttys000\
+Tims-MacBook-Pro:~ timwilliams$ cd Desktop\
+Tims-MacBook-Pro:Desktop timwilliams$ irb\
+irb(main):001:0> Hash_Three = \{:Batman => 100, :Superman => 200, :Punisher => 300\}\
+=> \{:Batman=>100, :Superman=>200, :Punisher=>300\}\
+irb(main):002:0> Hash_Three[Batman]\
+NameError: uninitialized constant Batman\
+	from (irb):2\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):003:0> Hash_Three[:Batman]\
+=> 100\
+irb(main):004:0> Hash = \{100 => 50\}\
+(irb):4: warning: already initialized constant Hash\
+=> \{100=>50\}\
+irb(main):005:0> ping_pong = \{100 => 50\}\
+=> \{100=>50\}\
+irb(main):006:0> h = \{a:1, b:2, c:3, d:4\}\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4\}\
+irb(main):007:0> h[:e] = 5\
+=> 5\
+irb(main):008:0> h\
+=> \{:a=>1, :b=>2, :c=>3, :d=>4, :e=>5\}\
+irb(main):009:0> h.delete_if\{|k,v| k < 3.5\}\
+ArgumentError: comparison of Symbol with 3.5 failed\
+	from (irb):9:in `<'\
+	from (irb):9:in `block in irb_binding'\
+	from (irb):9:in `delete_if'\
+	from (irb):9\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):010:0> h.delete_if\{|k,v| v < 3.5\}\
+=> \{:d=>4, :e=>5\}\
+irb(main):011:0> a = ["can fly"]\
+=> ["can fly"]\
+irb(main):012:0> \
+irb(main):013:0* e = \{Batman: a\}\
+=> \{:Batman=>["can fly"]\}\
+irb(main):014:0> \
+irb(main):015:0* Hash_One = \{"Batman" => 100, "Superman" => 200, "Punisher" => 300\}\
+=> \{"Batman"=>100, "Superman"=>200, "Punisher"=>300\}\
+irb(main):016:0> Hash_Two = \{Batman: 100, Superman: 200, Punisher: 300\} \
+=> \{:Batman=>100, :Superman=>200, :Punisher=>300\}\
+irb(main):017:0> a_of_hash = [Hash_One, Hash_Two]\
+=> [\{"Batman"=>100, "Superman"=>200, "Punisher"=>300\}, \{:Batman=>100, :Superman=>200, :Punisher=>300\}]\
+irb(main):018:0> #exercise 15\
+irb(main):019:0* arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']\
+=> ["snow", "winter", "ice", "slippery", "salted roads", "white trees"]\
+irb(main):020:0> arr.delete_if\{|word| word.start_with("s")\}\
+NoMethodError: undefined method `start_with' for "snow":String\
+	from (irb):20:in `block in irb_binding'\
+	from (irb):20:in `delete_if'\
+	from (irb):20\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):021:0> arr.delete_if\{|word| word.start_with?("s")\}\
+=> ["winter", "ice", "white trees"]\
+irb(main):022:0> arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']\
+=> ["snow", "winter", "ice", "slippery", "salted roads", "white trees"]\
+irb(main):023:0> arr.delete_if\{|word| word.start_with?("s") || word.start_with?("s")\}\
+=> ["winter", "ice", "white trees"]\
+irb(main):024:0> arr = ['snow', 'winter', 'ice', 'slippery', 'salted roads', 'white trees']\
+=> ["snow", "winter", "ice", "slippery", "salted roads", "white trees"]\
+irb(main):025:0> arr.delete_if\{|word| word.start_with?("s") || word.start_with?("w")\}\
+=> ["ice"]\
+irb(main):026:0> a = ['white snow', 'winter wonderland', 'melting ice',\
+irb(main):027:1*      'slippery sidewalk', 'salted roads', 'white trees']\
+=> ["white snow", "winter wonderland", "melting ice", "slippery sidewalk", "salted roads", "white trees"]\
+irb(main):028:0> \
+irb(main):029:0* a_2 = a.map\{|value| value.flatten.split\}\
+NoMethodError: undefined method `flatten' for "white snow":String\
+	from (irb):29:in `block in irb_binding'\
+	from (irb):29:in `map'\
+	from (irb):29\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):030:0> a = ['white snow', 'winter wonderland', 'melting ice',\
+irb(main):031:1*      'slippery sidewalk', 'salted roads', 'white trees']\
+=> ["white snow", "winter wonderland", "melting ice", "slippery sidewalk", "salted roads", "white trees"]\
+irb(main):032:0> a_2 = a.map\{|value| value.split\}\
+=> [["white", "snow"], ["winter", "wonderland"], ["melting", "ice"], ["slippery", "sidewalk"], ["salted", "roads"], ["white", "trees"]]\
+irb(main):033:0> a = ['white snow', 'winter wonderland', 'melting ice',\
+irb(main):034:1*      'slippery sidewalk', 'salted roads', 'white trees']\
+=> ["white snow", "winter wonderland", "melting ice", "slippery sidewalk", "salted roads", "white trees"]\
+irb(main):035:0> a.split\
+NoMethodError: undefined method `split' for #<Array:0x007fca3411b038>\
+	from (irb):35\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):036:0> a_2 = a.map\{|value| value.flatten.split\}\
+NoMethodError: undefined method `flatten' for "white snow":String\
+	from (irb):36:in `block in irb_binding'\
+	from (irb):36:in `map'\
+	from (irb):36\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):037:0> a_2 = flatten.map\{|value| value.split\}\
+NameError: undefined local variable or method `flatten' for main:Object\
+	from (irb):37\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):038:0> a_2 = a.map\{|value| value.split\}\
+=> [["white", "snow"], ["winter", "wonderland"], ["melting", "ice"], ["slippery", "sidewalk"], ["salted", "roads"], ["white", "trees"]]\
+irb(main):039:0>  a_3.flatten\
+NameError: undefined local variable or method `a_3' for main:Object\
+	from (irb):39\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):040:0> a_2.flatten\
+=> ["white", "snow", "winter", "wonderland", "melting", "ice", "slippery", "sidewalk", "salted", "roads", "white", "trees"]\
+irb(main):041:0> \
+irb(main):042:0* \
+irb(main):043:0* ontact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],\
+irb(main):044:1*             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+=> [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+irb(main):045:0> \
+irb(main):046:0* contacts = \{"Joe Smith" => \{\}, "Sally Johnson" => \{\}\}\
+=> \{"Joe Smith"=>\{\}, "Sally Johnson"=>\{\}\}\
+irb(main):047:0> \
+irb(main):048:0* contacts["Joe Smith"] = contact_data[0]\
+NameError: undefined local variable or method `contact_data' for main:Object\
+	from (irb):48\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):049:0> contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],\
+irb(main):050:1*             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+=> [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+irb(main):051:0> \
+irb(main):052:0* \
+irb(main):053:0* contacts["Joe Smith"] = contact_data[0]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):054:0> contacts["Sally Johnson"] = contact_data[1]\
+=> ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]\
+irb(main):055:0> contacts["Joe Smith"][:email] = contact_data[0][0]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):55:in `[]='\
+	from (irb):55\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):056:0> contacts["Joe Smith"][:address] = contact_data[0][1]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):56:in `[]='\
+	from (irb):56\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):057:0> contacts["Joe Smith"][:phone] = contact_data[0][2]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):57:in `[]='\
+	from (irb):57\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):058:0> contacts["Sally Johnson"][:email] = contact_data[1][0]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):58:in `[]='\
+	from (irb):58\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):059:0> contacts["Sally Johnson"][:address] = contact_data[1][1]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):59:in `[]='\
+	from (irb):59\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):060:0> contacts["Sally Johnson"][:phone] = contact_data[1][2]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):60:in `[]='\
+	from (irb):60\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):061:0> \
+irb(main):062:0* contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],\
+irb(main):063:1*             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+=> [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+irb(main):064:0> contacts = \{"Joe Smith" => \{\}, "Sally Johnson" => \{\}\}\
+=> \{"Joe Smith"=>\{\}, "Sally Johnson"=>\{\}\}\
+irb(main):065:0> \
+irb(main):066:0* contacts["Joe Smith"][:email] = contact_data[0][0]\
+=> "joe@email.com"\
+irb(main):067:0> contacts["Joe Smith"][:address] = contact_data[0][1]\
+=> "123 Main st."\
+irb(main):068:0> contacts["Joe Smith"][:phone] = contact_data[0][2]\
+=> "555-123-4567"\
+irb(main):069:0> contacts["Sally Johnson"][:email] = contact_data[1][0]\
+=> "sally@email.com"\
+irb(main):070:0> contacts["Sally Johnson"][:address] = contact_data[1][1]\
+=> "404 Not Found Dr."\
+irb(main):071:0> contacts["Sally Johnson"][:phone] = contact_data[1][2]\
+=> "123-234-3454"\
+irb(main):072:0> contacts\
+=> \{"Joe Smith"=>\{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}, "Sally Johnson"=>\{:email=>"sally@email.com", :address=>"404 Not Found Dr.", :phone=>"123-234-3454"\}\}\
+irb(main):073:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):074:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):075:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):076:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):077:0> \
+irb(main):078:0* contacts.each do |key,value| \
+irb(main):079:1* \
+irb(main):080:1* \
+irb(main):081:1*        key[:value] = contacts_dk.each do |k,v| \
+irb(main):082:2*             \
+irb(main):083:2* \
+irb(main):084:2*             k[:v] = contact_data.first\
+irb(main):085:2> \
+irb(main):086:2*             contact_data.shift\
+irb(main):087:2> \
+irb(main):088:2*               \
+irb(main):089:2*        end \
+irb(main):090:1> \
+irb(main):091:1* \
+irb(main):092:1* end\
+NameError: undefined local variable or method `contacts_dk' for main:Object\
+	from (irb):81:in `block in irb_binding'\
+	from (irb):78:in `each'\
+	from (irb):78\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):093:0> \
+irb(main):094:0* puts contactsontact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+joe@email.com\
+123 Main st.\
+555-123-4567\
+=> nil\
+irb(main):095:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):096:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):097:0> \
+irb(main):098:0* contacts.each do |key,value| \
+irb(main):099:1* \
+irb(main):100:1* \
+irb(main):101:1*        key[:value] = contact_dk.each do |k,v| \
+irb(main):102:2*             \
+irb(main):103:2* \
+irb(main):104:2*             k[:v] = contact_data.first\
+irb(main):105:2> \
+irb(main):106:2*             contact_data.shift\
+irb(main):107:2> \
+irb(main):108:2*               \
+irb(main):109:2*        end \
+irb(main):110:1> \
+irb(main):111:1* \
+irb(main):112:1* end\
+NoMethodError: undefined method `[]=' for :email:Symbol\
+	from (irb):104:in `block (2 levels) in irb_binding'\
+	from (irb):101:in `each'\
+	from (irb):101:in `block in irb_binding'\
+	from (irb):98:in `each'\
+	from (irb):98\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):113:0> \
+irb(main):114:0* puts contacts\
+\{"Joe Smith"=>\{\}\}\
+=> nil\
+irb(main):115:0> ntact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):116:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):117:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):118:0> \
+irb(main):119:0* contacts.each do |key,value| \
+irb(main):120:1* \
+irb(main):121:1* \
+irb(main):122:1*        key[value] = contact_dk.each do |k,v| \
+irb(main):123:2*             \
+irb(main):124:2* \
+irb(main):125:2*             k[:v] = contact_data.first\
+irb(main):126:2> \
+irb(main):127:2*             contact_data.shift\
+irb(main):128:2> \
+irb(main):129:2*               \
+irb(main):130:2*        end \
+irb(main):131:1> \
+irb(main):132:1* \
+irb(main):133:1* end\
+NoMethodError: undefined method `[]=' for :email:Symbol\
+	from (irb):125:in `block (2 levels) in irb_binding'\
+	from (irb):122:in `each'\
+	from (irb):122:in `block in irb_binding'\
+	from (irb):119:in `each'\
+	from (irb):119\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):134:0> \
+irb(main):135:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):136:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):137:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):138:0> \
+irb(main):139:0* #contacts.each do |key,value| \
+irb(main):140:0* \
+irb(main):141:0* \
+irb(main):142:0*        key[value] = contact_dk.each do |k,v| \
+irb(main):143:1*             \
+irb(main):144:1* \
+irb(main):145:1*             k[:v] = contact_data.first\
+irb(main):146:1> \
+irb(main):147:1*             contact_data.shift\
+irb(main):148:1> \
+irb(main):149:1*               \
+irb(main):150:1*        end \
+NameError: undefined local variable or method `key' for main:Object\
+	from (irb):142\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):151:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):152:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):153:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):154:0> \
+irb(main):155:0* #contacts.each do |key,value| \
+irb(main):156:0* \
+irb(main):157:0* \
+irb(main):158:0*        #key[value] = \
+irb(main):159:0* \
+irb(main):160:0*        contact_dk.each do |k,v| \
+irb(main):161:1*             \
+irb(main):162:1* \
+irb(main):163:1*             k[:v] = contact_data.first\
+irb(main):164:1> \
+irb(main):165:1*             contact_data.shift\
+irb(main):166:1> \
+irb(main):167:1*               \
+irb(main):168:1*        end \
+NoMethodError: undefined method `[]=' for :email:Symbol\
+	from (irb):163:in `block in irb_binding'\
+	from (irb):160:in `each'\
+	from (irb):160\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):169:0> \
+irb(main):170:0* \
+irb(main):171:0* #end\
+irb(main):172:0* \
+irb(main):173:0* puts contacts\
+\{"Joe Smith"=>\{\}\}\
+=> nil\
+irb(main):174:0> puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):175:0> \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf2 \cb3   [Restored]\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 \cb1 Last login: Thu Jan  8 19:57:19 on ttys000\
+Tims-MacBook-Pro:Desktop timwilliams$ contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+-bash: contact_data: command not found\
+Tims-MacBook-Pro:Desktop timwilliams$ cd Desktop\
+-bash: cd: Desktop: No such file or directory\
+Tims-MacBook-Pro:Desktop timwilliams$ irb\
+irb(main):001:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):002:0> contact_data.shift\
+=> "joe@email.com"\
+irb(main):003:0> contact_data\
+=> ["123 Main st.", "555-123-4567"]\
+irb(main):004:0> contact = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):005:0> contact["Joe Smith] = 10\
+irb(main):006:1" "\
+irb(main):007:1> end\
+SyntaxError: (irb):7: syntax error, unexpected keyword_end, expecting ']'\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):008:0> contact["Joe Smith"] = 10\
+=> 10\
+irb(main):009:0> contact\
+=> \{"Joe Smith"=>10\}\
+irb(main):010:0> contact["Joe Smith"] = contact_data\
+=> ["123 Main st.", "555-123-4567"]\
+irb(main):011:0> contact\
+=> \{"Joe Smith"=>["123 Main st.", "555-123-4567"]\}\
+irb(main):012:0> contacts["Joe Smith"][:email] = 50\
+NameError: undefined local variable or method `contacts' for main:Object\
+	from (irb):12\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):013:0> contact["Joe Smith"][:email] = 10\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):13:in `[]='\
+	from (irb):13\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):014:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):015:0> contacts["Joe Smith"][:email] = 10\
+=> 10\
+irb(main):016:0> contacts\
+=> \{"Joe Smith"=>\{:email=>10\}\}\
+irb(main):017:0> contacts["Joe Smith"][:money] = 100\
+=> 100\
+irb(main):018:0> contacts\
+=> \{"Joe Smith"=>\{:email=>10, :money=>100\}\}\
+irb(main):019:0> contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],\
+irb(main):020:1*             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+=> [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+irb(main):021:0> \
+irb(main):022:0* contacts = \{"Joe Smith" => \{\}, "Sally Johnson" => \{\}\}\
+=> \{"Joe Smith"=>\{\}, "Sally Johnson"=>\{\}\}\
+irb(main):023:0> \
+irb(main):024:0* \
+irb(main):025:0* contacts["Joe Smith"][:email] = contact_data[0][0]\
+=> "joe@email.com"\
+irb(main):026:0> contacts["Joe Smith"][:address] = contact_data[0][1]\
+=> "123 Main st."\
+irb(main):027:0> contacts["Joe Smith"][:phone] = contact_data[0][2]\
+=> "555-123-4567"\
+irb(main):028:0> contacts["Sally Johnson"][:email] = contact_data[1][0]\
+=> "sally@email.com"\
+irb(main):029:0> contacts["Sally Johnson"][:address] = contact_data[1][1]\
+=> "404 Not Found Dr."\
+irb(main):030:0> contacts["Sally Johnson"][:phone] = contact_data[1][2]\
+=> "123-234-3454"\
+irb(main):031:0> contacts\
+=> \{"Joe Smith"=>\{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}, "Sally Johnson"=>\{:email=>"sally@email.com", :address=>"404 Not Found Dr.", :phone=>"123-234-3454"\}\}\
+irb(main):032:0> \
+irb(main):033:0* \
+irb(main):034:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):035:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):036:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):037:0> \
+irb(main):038:0* contacts.each do |key,value| \
+irb(main):039:1* \
+irb(main):040:1* \
+irb(main):041:1*         key = contact_dk.first\
+irb(main):042:1>         value = contact_data.first\
+irb(main):043:1>        \
+irb(main):044:1*        contact_dk.shift\
+irb(main):045:1>        contact_data.shift\
+irb(main):046:1> \
+irb(main):047:1* end\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):048:0> \
+irb(main):049:0* puts contacts\
+\{"Joe Smith"=>\{\}\}\
+=> nil\
+irb(main):050:0> ontact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):051:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):052:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):053:0> \
+irb(main):054:0* contacts.each_value do |value| \
+irb(main):055:1* \
+irb(main):056:1*         value = contact_data.first\
+irb(main):057:1>        contact_data.shift\
+irb(main):058:1> \
+irb(main):059:1* end\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):060:0> \
+irb(main):061:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):062:0> contact_dk\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):063:0> contacts_dk.each_value do |value| \
+irb(main):064:1* \
+irb(main):065:1*         value = contact_data.first\
+irb(main):066:1>        contact_data.shift\
+irb(main):067:1> \
+irb(main):068:1* end\
+NameError: undefined local variable or method `contacts_dk' for main:Object\
+	from (irb):63\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):069:0> \
+irb(main):070:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):071:0> ontact_dk.each_value do |value| \
+irb(main):072:1* \
+irb(main):073:1*         value = contact_data.first\
+irb(main):074:1>        contact_data.shift\
+irb(main):075:1> \
+irb(main):076:1* end\
+NameError: undefined local variable or method `ontact_dk' for main:Object\
+	from (irb):71\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):077:0> \
+irb(main):078:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):079:0> contact contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+NoMethodError: undefined method `contact' for main:Object\
+	from (irb):79\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):080:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):081:0> contact_dk = [email,address,phone]\
+NameError: undefined local variable or method `email' for main:Object\
+	from (irb):81\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):082:0> \
+irb(main):083:0* \
+irb(main):084:0* \
+irb(main):085:0* contacts.each_pair do |key,value| \
+irb(main):086:1* \
+irb(main):087:1*         value = contact_data.first\
+irb(main):088:1>        contact_data.shift\
+irb(main):089:1> \
+irb(main):090:1* end\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):091:0> \
+irb(main):092:0* puts contacts\
+\{"Joe Smith"=>\{\}\}\
+=> nil\
+irb(main):093:0> contact_data.first\
+=> "123 Main st."\
+irb(main):094:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):095:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):096:0> contact_dk = \{email: \{\},address:\{\},phone: \{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):097:0> \
+irb(main):098:0* contact_dk.each_value do |value| \
+irb(main):099:1* \
+irb(main):100:1*         value = contact_data.first\
+irb(main):101:1>        contact_data.shift\
+irb(main):102:1> \
+irb(main):103:1* end\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):104:0> \
+irb(main):105:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):106:0> \
+irb(main):107:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):108:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):109:0> contact_dk = \{email: ,address: ,phone: \}\
+SyntaxError: (irb):109: syntax error, unexpected ','\
+contact_dk = \{email: ,address: ,phone: \}\
+                      ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):110:0> \
+irb(main):111:0* contact_dk.each_value do |value| \
+irb(main):112:1* \
+irb(main):113:1*         value = contact_data.first\
+irb(main):114:1>        contact_data.shift\
+irb(main):115:1> \
+irb(main):116:1* end\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):117:0> \
+irb(main):118:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):119:0> contact_data\
+=> []\
+irb(main):120:0> \
+irb(main):121:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):122:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):123:0> contact_dk = \{email: ,address: ,phone: \}\
+SyntaxError: (irb):123: syntax error, unexpected ','\
+contact_dk = \{email: ,address: ,phone: \}\
+                      ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):124:0> \
+irb(main):125:0* contact_dk.each_key do |key| \
+irb(main):126:1* \
+irb(main):127:1*        contact_dk[:key] = contact_data.first\
+irb(main):128:1>        contact_data.shift\
+irb(main):129:1> \
+irb(main):130:1* end\
+RuntimeError: can't add a new key into hash during iteration\
+	from (irb):127:in `block in irb_binding'\
+	from (irb):125:in `each_key'\
+	from (irb):125\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):131:0> \
+irb(main):132:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):133:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):134:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):135:0> contact_dk = \{email: ,address: ,phone: \}\
+SyntaxError: (irb):135: syntax error, unexpected ','\
+contact_dk = \{email: ,address: ,phone: \}\
+                      ^\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):136:0> \
+irb(main):137:0* contact_dk.each_key do |key| \
+irb(main):138:1* \
+irb(main):139:1*        contact_dk[:key] = 11\
+irb(main):140:1>        contact_data.shift\
+irb(main):141:1> \
+irb(main):142:1* end\
+RuntimeError: can't add a new key into hash during iteration\
+	from (irb):139:in `block in irb_binding'\
+	from (irb):137:in `each_key'\
+	from (irb):137\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):143:0> \
+irb(main):144:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):145:0> \
+irb(main):146:0* \
+irb(main):147:0* \
+irb(main):148:0* \
+irb(main):149:0* \
+irb(main):150:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):151:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):152:0> contact_dk = \{email:\{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):153:0> \
+irb(main):154:0* contact_dk.each_key do |key| \
+irb(main):155:1* \
+irb(main):156:1*        contact.dk.store(key,contact_data.first)\
+irb(main):157:1>        contact_data.shift\
+irb(main):158:1> \
+irb(main):159:1* end\
+NoMethodError: undefined method `dk' for \{"Joe Smith"=>["123 Main st.", "555-123-4567"]\}:Hash\
+	from (irb):156:in `block in irb_binding'\
+	from (irb):154:in `each_key'\
+	from (irb):154\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):160:0> \
+irb(main):161:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):162:0> \
+irb(main):163:0* contact_dk\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):164:0> \
+irb(main):165:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):166:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):167:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):168:0> \
+irb(main):169:0* #contact_dk.each_key do |key| \
+irb(main):170:0* \
+irb(main):171:0*        contact.dk.store(key,contact_data.first)\
+NoMethodError: undefined method `dk' for \{"Joe Smith"=>["123 Main st.", "555-123-4567"]\}:Hash\
+	from (irb):171\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):172:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):173:0> \
+irb(main):174:0* #end\
+irb(main):175:0* \
+irb(main):176:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):177:0> \
+irb(main):178:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):179:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):180:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):181:0> \
+irb(main):182:0* #contact_dk.each_key do |key| \
+irb(main):183:0* \
+irb(main):184:0*        contact_dk.store(key,contact_data.first)\
+NameError: undefined local variable or method `key' for main:Object\
+	from (irb):184\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):185:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):186:0> \
+irb(main):187:0* #end\
+irb(main):188:0* \
+irb(main):189:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):190:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):191:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):192:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):193:0> \
+irb(main):194:0* #contact_dk.each_key do |key| \
+irb(main):195:0* \
+irb(main):196:0*        contact_dk.store(key,contact_data.first)\
+NameError: undefined local variable or method `key' for main:Object\
+	from (irb):196\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):197:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):198:0> \
+irb(main):199:0* #end\
+irb(main):200:0* \
+irb(main):201:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+=> nil\
+irb(main):202:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):203:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):204:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):205:0> \
+irb(main):206:0* #contact_dk.each_key do |key| \
+irb(main):207:0* \
+irb(main):208:0*        contact_dk.store("key",contact_data.first)\
+=> "joe@email.com"\
+irb(main):209:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):210:0> \
+irb(main):211:0* #end\
+irb(main):212:0* \
+irb(main):213:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}, "key"=>"joe@email.com"\}\
+=> nil\
+irb(main):214:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):215:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):216:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):217:0> \
+irb(main):218:0* #contact_dk.each_key do |key| \
+irb(main):219:0* \
+irb(main):220:0*        contact_dk.store("email",contact_data.first)\
+=> "joe@email.com"\
+irb(main):221:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):222:0> \
+irb(main):223:0* #end\
+irb(main):224:0* \
+irb(main):225:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}, "email"=>"joe@email.com"\}\
+=> nil\
+irb(main):226:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):227:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):228:0> contact_dk = [email,address ,phone]\
+NameError: undefined local variable or method `email' for main:Object\
+	from (irb):228\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):229:0> \
+irb(main):230:0* new_hash = \{\}\
+=> \{\}\
+irb(main):231:0> \
+irb(main):232:0* #contact_dk.each_key do |key| \
+irb(main):233:0* \
+irb(main):234:0*        new_hash.store(contact_dk.first,contact_data.first)\
+=> "joe@email.com"\
+irb(main):235:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):236:0>        contact_dk.first\
+=> [:email, \{\}]\
+irb(main):237:0> #end\
+irb(main):238:0* \
+irb(main):239:0* puts contact_dk\
+\{:email=>\{\}, :address=>\{\}, :phone=>\{\}, "email"=>"joe@email.com"\}\
+=> nil\
+irb(main):240:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):241:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):242:0> contact_dk = [email,address ,phone]\
+NameError: undefined local variable or method `email' for main:Object\
+	from (irb):242\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):243:0> \
+irb(main):244:0* new_hash = \{\}\
+=> \{\}\
+irb(main):245:0> \
+irb(main):246:0* #contact_dk.each_key do |key| \
+irb(main):247:0* \
+irb(main):248:0*        new_hash.store(contact_dk.first,contact_data.first)\
+=> "joe@email.com"\
+irb(main):249:0>        contact_data.shift\
+=> "joe@email.com"\
+irb(main):250:0>        contact_dk.first\
+=> [:email, \{\}]\
+irb(main):251:0> #end\
+irb(main):252:0* \
+irb(main):253:0* puts new_hash\
+\{[:email, \{\}]=>"joe@email.com"\}\
+=> nil\
+irb(main):254:0> contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],\
+irb(main):255:1*             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+=> [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+irb(main):256:0> \
+irb(main):257:0* \
+irb(main):258:0* contacts = \{"Joe Smith" => \{\}, "Sally Johnson" => \{\}\}\
+=> \{"Joe Smith"=>\{\}, "Sally Johnson"=>\{\}\}\
+irb(main):259:0> \
+irb(main):260:0* \
+irb(main):261:0* contacts["Joe Smith"] = contact_data[0]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):262:0> contacts["Sally Johnson"] = contact_data[1]\
+=> ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]\
+irb(main):263:0> \
+irb(main):264:0* #apparently I did this wrong is should have been: \
+irb(main):265:0* \
+irb(main):266:0* contacts["Joe Smith"][:email] = contact_data[0][0]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):266:in `[]='\
+	from (irb):266\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):267:0> contacts["Joe Smith"][:address] = contact_data[0][1]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):267:in `[]='\
+	from (irb):267\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):268:0> contacts["Joe Smith"][:phone] = contact_data[0][2]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):268:in `[]='\
+	from (irb):268\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):269:0> contacts["Sally Johnson"][:email] = contact_data[1][0]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):269:in `[]='\
+	from (irb):269\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):270:0> contacts["Sally Johnson"][:address] = contact_data[1][1]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):270:in `[]='\
+	from (irb):270\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):271:0> contacts["Sally Johnson"][:phone] = contact_data[1][2]\
+TypeError: no implicit conversion of Symbol into Integer\
+	from (irb):271:in `[]='\
+	from (irb):271\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):272:0> ontact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],\
+irb(main):273:1*             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+=> [["joe@email.com", "123 Main st.", "555-123-4567"], ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]\
+irb(main):274:0> \
+irb(main):275:0* \
+irb(main):276:0* contacts = \{"Joe Smith" => \{\}, "Sally Johnson" => \{\}\}\
+=> \{"Joe Smith"=>\{\}, "Sally Johnson"=>\{\}\}\
+irb(main):277:0> \
+irb(main):278:0* contacts["Joe Smith"][:email] = contact_data[0][0]\
+=> "joe@email.com"\
+irb(main):279:0> contacts["Joe Smith"][:address] = contact_data[0][1]\
+=> "123 Main st."\
+irb(main):280:0> contacts["Joe Smith"][:phone] = contact_data[0][2]\
+=> "555-123-4567"\
+irb(main):281:0> contacts["Sally Johnson"][:email] = contact_data[1][0]\
+=> "sally@email.com"\
+irb(main):282:0> contacts["Sally Johnson"][:address] = contact_data[1][1]\
+=> "404 Not Found Dr."\
+irb(main):283:0> contacts["Sally Johnson"][:phone] = contact_data[1][2]\
+=> "123-234-3454"\
+irb(main):284:0> \
+irb(main):285:0* contacts\
+=> \{"Joe Smith"=>\{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}, "Sally Johnson"=>\{:email=>"sally@email.com", :address=>"404 Not Found Dr.", :phone=>"123-234-3454"\}\}\
+irb(main):286:0> \
+irb(main):287:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):288:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):289:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):290:0> \
+irb(main):291:0* contact_dk.each do |key,value|\
+irb(main):292:1* \
+irb(main):293:1*        contact_dk.store(contact_data.first)\
+irb(main):294:1>        contact_data.shift\
+irb(main):295:1> \
+irb(main):296:1* end\
+ArgumentError: wrong number of arguments (1 for 2)\
+	from (irb):293:in `store'\
+	from (irb):293:in `block in irb_binding'\
+	from (irb):291:in `each'\
+	from (irb):291\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):297:0> \
+irb(main):298:0* contacts["Joe Smith"] = contact_dk\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):299:0> contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):300:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):301:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):302:0> \
+irb(main):303:0* contact_dk.each do |key,value|\
+irb(main):304:1* \
+irb(main):305:1*        contact_dk.store(key, contact_data.first)\
+irb(main):306:1>        contact_data.shift\
+irb(main):307:1> \
+irb(main):308:1* end\
+=> \{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}\
+irb(main):309:0> \
+irb(main):310:0* contacts["Joe Smith"] = contact_dk\
+=> \{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}\
+irb(main):311:0> contacts["Joe Smith"][:phone]\
+=> "555-123-4567"\
+irb(main):312:0> contacts["Sally Jonson"][:email]\
+NoMethodError: undefined method `[]' for nil:NilClass\
+	from (irb):312\
+	from /usr/local/bin/irb:11:in `<main>'\
+irb(main):313:0> \
+irb(main):314:0* #exercise 14\
+irb(main):315:0* \
+irb(main):316:0* contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]\
+=> ["joe@email.com", "123 Main st.", "555-123-4567"]\
+irb(main):317:0> contacts = \{"Joe Smith" => \{\}\}\
+=> \{"Joe Smith"=>\{\}\}\
+irb(main):318:0> contact_dk = \{email: \{\} ,address:\{\} ,phone:\{\}\}\
+=> \{:email=>\{\}, :address=>\{\}, :phone=>\{\}\}\
+irb(main):319:0> \
+irb(main):320:0* contact_dk.each do |key,value|\
+irb(main):321:1* \
+irb(main):322:1*        contact_dk.store(key, contact_data.first)\
+irb(main):323:1>        contact_data.shift\
+irb(main):324:1> \
+irb(main):325:1* end\
+=> \{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}\
+irb(main):326:0> \
+irb(main):327:0* contacts["Joe Smith"] = contact_dk\
+=> \{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}\
+irb(main):328:0> \
+irb(main):329:0* puts contacts\
+\{"Joe Smith"=>\{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}\}\
+=> nil\
+irb(main):330:0> contacts\
+=> \{"Joe Smith"=>\{:email=>"joe@email.com", :address=>"123 Main st.", :phone=>"555-123-4567"\}\}\
+irb(main):331:0> \
+\
+\pard\pardeftab720
+
+\f1\b\fs24 \cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+}

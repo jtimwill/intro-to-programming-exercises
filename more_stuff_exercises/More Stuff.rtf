@@ -1,0 +1,76 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fmodern\fcharset0 Courier;\f2\fmodern\fcharset0 Courier-Bold;
+\f3\fmodern\fcharset0 Courier-Oblique;\f4\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\b\fs24 \cf0 exercise 5
+\b0 \
+\
+\
+The function does not pass blocks into the function correctly it should be (&block)\
+\
+\pard\pardeftab720
+
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 def execute($block)\
+  block.call\
+end\
+\
+\
+execute \{ puts "Hello from inside the execute method!" \}\
+\
+\
+
+\f2\b exercise 4
+\f1\b0 \
+\
+def execute(&block)\
+  block.call # <\'97 modify here\
+end\
+\
+execute \{ puts "Hello from inside the execute method!" \}\
+\
+\
+\
+
+\f2\b exercise 2
+\f1\b0 \
+\
+An error (I kind of ruined this problem by doing this in reverse order)\
+\
+\
+\pard\pardeftab720
+
+\f2\b \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 exercise 3\
+\
+
+\f3\i\b0 1. What is exception handling: 
+\f1\i0 \
+\
+It is a way to deal with discrepancies in your program\
+\
+
+\f3\i 2. What problem does it solve:
+\f1\i0  \
+\
+It allows your code to continue to execute, even if there is an exception\
+\
+\
+actual answer: \
+\
+\pard\pardeftab720
+
+\f4 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Exception handling is a structure used to handle the possibility of an error occurring in a program. It is a way of handling the error by changing the flow of control without exiting the program entirely.
+\f1 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720
+
+\f2\b \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 exercise 1\
+\
+}

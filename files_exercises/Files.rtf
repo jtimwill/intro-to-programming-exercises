@@ -1,0 +1,82 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 exercise 1\
+\
+\
+\
+\
+exercise 2 \
+\
+merge creates a new hash that consists of the combination of the two arrays\
+\
+merge! actually changes the value of the of the first array\
+\
+\
+4. \
+\
+\pard\pardeftab720\sa240
+
+\f1 \cf0 \expnd0\expndtw0\kerning0
+Given the following expression, how would you access the name of the person?\
+\pard\pardeftab720
+
+\f2 \cf0 \expnd0\expndtw0\kerning0
+person = \{name: 'Bob', occupation: 'web developer', hobbies: 'painting'\}\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+\
+# I thought the syntax was person[name:] it\'92s actually person[:name]\
+\
+5. use has_value\
+#note my program failed because I tried to pass an array into it\
+\
+1 # I had trouble with this, to use select with a new format hash, use k == :sisters, not k == sisters\
+\
+6\
+\
+# I\'92m stuck on 6, I think that there must be a string compare function for anagrams. I just can\'92t find it. Also, why is an array question in the  hash section. \
+\
+I would solve this problem in the following steps\
+\
+1. sort every string in the array so that the letters are in alphabetical order\
+2. use that data for a new array (array2)\
+3. iterate through array2 and find the indexes of the duplicates (uniq)\
+4. create a third array (array3) with that consists of the indexes from the original array (array)\
+\
+#note the for the actual answer, you can use the split function to break the string into in array\
+#so you split, sort and then join the array again\
+#then look for duplicates and push the value onto the result hash, this is an interesting approach \
+#because the key is the sorted word, and the value is the original. thus the same key (or letters) can \
+#be associated with different values (letter orders). I would not have thought of that. very fascinating\
+#I would have changed the final answer. You could easily store the final value result in an array\
+#final_values = result.values \
+\
+\
+\
+\
+\
+\
+7\
+\
+ 
+\f2 \expnd0\expndtw0\kerning0
+x = "hi there"\
+\pard\pardeftab720
+\cf0 \expnd0\expndtw0\kerning0
+my_hash = \{x: "some value"\}\
+my_hash2 = \{x => "some value"\}\
+\
+# my_hash uses the new format\
+# my_hash2 uses the old format\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+\
+8 # My answer was B\
+}

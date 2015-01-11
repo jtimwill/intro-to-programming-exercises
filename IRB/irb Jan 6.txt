@@ -1,0 +1,221 @@
+Last login: Mon Jan  5 20:43:08 on console
+Tims-MacBook-Pro:~ timwilliams$ cd Desktop
+Tims-MacBook-Pro:Desktop timwilliams$ irb
+irb(main):001:0> "powerball" =~ /b/
+=> 5
+irb(main):002:0> /b/.match("powerball")
+=> #<MatchData "b">
+irb(main):003:0> Math.sqrt(400)
+=> 20.0
+irb(main):004:0> Math::PI
+=> 3.141592653589793
+irb(main):005:0> t = time.new(2008, 7, 4)
+NameError: undefined local variable or method `time' for main:Object
+	from (irb):5
+	from /usr/local/bin/irb:11:in `<main>'
+irb(main):006:0> t = Time.new(200, 7, 4)
+=> 0200-07-04 00:00:00 -0500
+irb(main):007:0> t.monday?
+=> false
+irb(main):008:0> t.friday?
+=> true
+irb(main):009:0> exit
+Tims-MacBook-Pro:Desktop timwilliams$ touch greeting.rb
+Tims-MacBook-Pro:Desktop timwilliams$ ruby greeting.rb
+Hello,John
+greeting.rb:8:in `+': no implicit conversion of Fixnum into String (TypeError)
+	from greeting.rb:8:in `greet'
+	from greeting.rb:14:in `<main>'
+Tims-MacBook-Pro:Desktop timwilliams$ touch greet.rb
+Tims-MacBook-Pro:Desktop timwilliams$ ruby greet.rb
+H e l l o, J o h n
+greet.rb:2:in `space_out_letters': undefined method `split' for 1:Fixnum (NoMethodError)
+	from greet.rb:6:in `greet'
+	from greet.rb:10:in `decorate_greeting'
+	from greet.rb:14:in `<main>'
+Tims-MacBook-Pro:Desktop timwilliams$ irb
+irb(main):001:0> a = "hi there" 
+=> "hi there"
+irb(main):002:0> b = a
+=> "hi there"
+irb(main):003:0> a = "not here"
+=> "not here"
+irb(main):004:0> b
+=> "hi there"
+irb(main):005:0> a = "hi there"
+=> "hi there"
+irb(main):006:0> b = a
+=> "hi there"
+irb(main):007:0> a << ", Bob!"
+=> "hi there, Bob!"
+irb(main):008:0> b
+=> "hi there, Bob!"
+irb(main):009:0> a = [1,2,3,3]
+=> [1, 2, 3, 3]
+irb(main):010:0> b = a
+=> [1, 2, 3, 3]
+irb(main):011:0> c = a.uniq
+=> [1, 2, 3]
+irb(main):012:0> a = 
+irb(main):013:0* a
+=> [1, 2, 3, 3]
+irb(main):014:0> a
+=> [1, 2, 3, 3]
+irb(main):015:0> c = a.uniq?
+NoMethodError: undefined method `uniq?' for [1, 2, 3, 3]:Array
+	from (irb):15
+	from /usr/local/bin/irb:11:in `<main>'
+irb(main):016:0> c = a.uniq!
+=> [1, 2, 3]
+irb(main):017:0> a = 
+irb(main):018:0* a
+=> [1, 2, 3]
+irb(main):019:0> b
+=> [1, 2, 3]
+irb(main):020:0> c
+=> [1, 2, 3]
+irb(main):021:0> def test(b)
+irb(main):022:1> b.map{|letter| "I like the letter: #I like the letter: {letter}"}
+irb(main):023:1> end
+=> :test
+irb(main):024:0> a = ['a', 'b', 'c']
+=> ["a", "b", "c"]
+irb(main):025:0> test(a)
+=> ["I like the letter: #I like the letter: {letter}", "I like the letter: #I like the letter: {letter}", "I like the letter: #I like the letter: {letter}"]
+irb(main):026:0> a 
+=> ["a", "b", "c"]
+irb(main):027:0> def test2(b)
+irb(main):028:1> b.map!{|letter| "I like the letter: #{letter}"}
+irb(main):029:1> end
+=> :test2
+irb(main):030:0> test2(a)
+=> ["I like the letter: a", "I like the letter: b", "I like the letter: c"]
+irb(main):031:0> a
+=> ["I like the letter: a", "I like the letter: b", "I like the letter: c"]
+irb(main):032:0> exit
+Tims-MacBook-Pro:Desktop timwilliams$ touch more_stuff.rb
+Tims-MacBook-Pro:Desktop timwilliams$ ruby more_stuff.rb
+laboratory
+NO LAB!
+NO LAB!
+elaborate
+NO LAB!
+Tims-MacBook-Pro:Desktop timwilliams$ 
+
+
+Last login: Tue Jan  6 18:48:21 on ttys000
+Tims-MacBook-Pro:~ timwilliams$ cd Desktop
+Tims-MacBook-Pro:Desktop timwilliams$ touch ex_ex_1.rb
+Tims-MacBook-Pro:Desktop timwilliams$ rubyex_ex_1.rb
+-bash: rubyex_ex_1.rb: command not found
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+ex_ex_1.rb:10: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+array.each{|var| if var > 5 puts var}
+                                ^
+Tims-MacBook-Pro:Desktop timwilliams$ ex_ex_1.rb
+-bash: ex_ex_1.rb: command not found
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+6
+7
+8
+9
+10
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+ex_ex_1.rb:22: syntax error, unexpected tIDENTIFIER, expecting '}'
+array.each {|var| var > 5 puts var}
+                              ^
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+6
+7
+8
+9
+10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+11
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+6
+7
+8
+9
+10
+ex_ex_1.rb:44:in `<main>': undefined method `push' for 11:Fixnum (NoMethodError)
+Tims-MacBook-Pro:Desktop timwilliams$ ruby ex_ex_1.rb
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+6
+7
+8
+9
+10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+3
+Tims-MacBook-Pro:Desktop timwilliams$ 
+
